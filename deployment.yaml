@@ -1,0 +1,25 @@
+user_provided_deployment_id: datarobot/conor.spicer/my-demo-deployment-id
+user_provided_model_id: datarobot/conor.spicer/model-unique-id-cicd-demo
+prediction_environment_name: https://mlops.dynamic.orm.datarobot.com
+
+settings:
+  label: "My CI/CD Deployment example"
+  description: "This is a more detailed description."
+  importance: LOW  # NOTE: a higher importance value than "LOW" will trigger a review process
+                   # for any operation, such as 'create', 'update', 'delete', etc. So, practically
+                   # the user will need to wait for approval from a reviewer in order to be able
+                   # to apply new changes and merge them to the main branch.
+  association:
+    association_id_column: id
+    required_in_pred_request: true
+    actual_values_column: Grade 2014
+    actuals_dataset_id: 648b017af7340729c62901f1
+  enable_target_drift: true
+  enable_feature_drift: true
+  enable_predictions_collection: true
+  enable_challenger_models: true
+  segment_analysis:
+    enabled: true
+    attributes:
+      - Host-IP
+      - Remote-IP

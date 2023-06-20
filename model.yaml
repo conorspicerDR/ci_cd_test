@@ -1,0 +1,51 @@
+user_provided_model_id: datarobot/conor.spicer/model-unique-id-cicd-demo
+target_type: Regression
+settings:
+  name: Demo GitHub Model [GitHub CI/CD]
+  target_name: Grade 2014
+  training_dataset_id: 648b017af7340729c62901f1
+
+version:
+  # Make sure this is the environment ID is in your system.
+  # This one is the '[DataRobot] Python 3 Scikit-Learn Drop-In' environment
+  model_environment_id: 5e8c889607389fe0f466c72d
+  exclude_glob_pattern:
+    - README.md
+    - out/
+  include_glob_pattern:
+    - ./  
+  memory: 268435456
+  replicas: 1
+
+# test:
+#   memory: 268435456
+#   skip: false
+#   test_data_id: 648b017af7340729c62901f1
+#   checks:
+#     null_value_imputation:
+#       block_deployment_if_fails: false
+#       enabled: true
+#     performance:
+#       block_deployment_if_fails: false
+#       enabled: true
+#       max_execution_time: 50
+#       maximum_response_time: 30
+#       number_of_parallel_users: 1
+#     prediction_verification:
+#       block_deployment_if_fails: false
+#       enabled: true
+#       match_threshold: 0.9
+#       output_dataset_id: 63f798fe5ae2c856f04ff8c6
+#       passing_match_rate: 85
+#       predictions_column: Grade 2014
+#     side_effects:
+#       block_deployment_if_fails: false
+#       enabled: true
+#     stability:
+#       block_deployment_if_fails: false
+#       enabled: true
+#       maximum_payload_size: 1000
+#       minimum_payload_size: 100
+#       number_of_parallel_users: 1
+#       passing_rate: 90
+#       total_prediction_requests: 50
